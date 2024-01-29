@@ -1,0 +1,66 @@
+% \documentclass[preprint,5p,twocolumn]{elsarticle}
+\documentclass[preprint,3p]{elsarticle}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+  upquote=true,
+  breaklines=true
+}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\biboptions{numbers,sort&compress}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newtheorem{property}{Property}
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+\begin{frontmatter}  % article information
+% title information
+\title{Article Title \tnoteref{t1}}
+
+% author information
+\author[school1]{Author 1}
+\ead{example1@overleaf.com}
+\author[school1]{Author 2\corref{t2}}
+\ead{example1@overleaf.com}
+
+% authors' affiliation
+\address[school1]{Address of school 1.}
+
+% footnote
+\tnotetext[t1]{Funds information.}
+\cortext[t2]{Corresponding author.}
+
+% abstract & key words
+\begin{abstract}
+Abstract content.
+\end{abstract}
+\begin{keyword}
+Word 1 \sep Word 2
+\end{keyword}
+\end{frontmatter}
+
+\bibliographystyle{plain}
+\bibliography{ref.bib}
+
+\newpage
+\appendix
+
+\end{document}

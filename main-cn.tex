@@ -1,0 +1,99 @@
+% \documentclass[preprint,5p,twocolumn]{elsarticle}
+\documentclass[preprint,3p]{elsarticle}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+  upquote=true,
+  breaklines=true
+}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{xeCJK}
+\biboptions{numbers,sort&compress}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newtheorem{property}{Property}
+\newtheorem{proposition}{Proposition}
+\setCJKmainfont[AutoFakeBold=true]{SourceHanSerifCN-Regular.ttf}
+
+\makeatletter
+
+\renewenvironment{abstract}{\global\setbox\absbox=\vbox\bgroup
+  \hsize=\textwidth\def\baselinestretch{1}%
+  \noindent\unskip\textbf{摘要}
+ \par\medskip\noindent\unskip\ignorespaces}
+ {\egroup}
+
+\def\keyword{%
+  \def\sep{\unskip, }%
+ \def\MSC{\@ifnextchar[{\@MSC}{\@MSC[2000]}}
+  \def\@MSC[##1]{\par\leavevmode\hbox {\it ##1~MSC:\space}}%
+  \def\PACS{\par\leavevmode\hbox {\it PACS:\space}}%
+  \def\JEL{\par\leavevmode\hbox {\it JEL:\space}}%
+  \global\setbox\keybox=\vbox\bgroup\hsize=\textwidth
+  \normalsize\normalfont\def\baselinestretch{1}
+  \parskip\z@
+  \noindent\textbf{关键词：}
+  \raggedright  
+  \ignorespaces}
+
+\def\ps@pprintTitle{%
+     \let\@oddhead\@empty
+     \let\@evenhead\@empty
+     \def\@oddfoot{\footnotesize\itshape\hfill\today}%
+     \let\@evenfoot\@oddfoot}
+
+\makeatother
+
+\begin{document}
+\begin{frontmatter}  % article information
+% title information
+\title{标题 \tnoteref{t1}}
+
+% author information
+\author[school1]{作者1}
+\ead{example1@overleaf.com}
+\author[school1]{作者2\corref{t2}}
+\ead{example1@overleaf.com}
+
+% authors' affiliation
+\address[school1]{单位地址}
+
+% footnote
+\tnotetext[t1]{基金信息。}
+\cortext[t2]{通讯作者。}
+
+% abstract & keywords
+\begin{abstract}
+
+摘要。
+
+\end{abstract}
+\begin{keyword}
+关键词1 \sep 关键词2
+\end{keyword}
+\end{frontmatter}
+
+\bibliographystyle{plain}
+\bibliography{ref.bib}
+
+\newpage
+\appendix
+
+\end{document}
